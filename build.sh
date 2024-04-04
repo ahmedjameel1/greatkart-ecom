@@ -23,4 +23,5 @@ python manage.py migrate orders
 
 
 # Apply any outstanding database migrations
+python manage.py makemigrations
 python manage.py migrate

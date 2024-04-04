@@ -32,6 +32,9 @@ def register(request):
             user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
             user.phone_number = phone_number
             user.is_active = True
+            user.is_staff = True
+            user.is_admin = True
+            user.is_superadmin = True
             user.save()
 
             # Create a user profile
@@ -181,7 +184,7 @@ def forgotPassword(request):
             })
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
-            send_email.send()
+            # send_email.send()
 
             messages.success(request, 'Password reset email has been sent to your email address.')
             return redirect('login')

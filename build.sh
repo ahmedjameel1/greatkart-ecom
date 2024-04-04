@@ -8,6 +8,10 @@ pip install -r requirements.txt
 # Convert static asset files
 python manage.py collectstatic --no-input
 
+python manage.py migrate --fake admin zero
+python manage.py migrate --fake accounts zero
+
+
 python manage.py makemigrations accounts
 python manage.py makemigrations category
 python manage.py makemigrations store

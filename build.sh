@@ -20,8 +20,3 @@ python manage.py makemigrations carts
 python manage.py migrate carts
 python manage.py makemigrations orders
 python manage.py migrate orders
-
-
-# Apply any outstanding database migrations
-python manage.py makemigrations
-python manage.py migrate
